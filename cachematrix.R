@@ -4,14 +4,14 @@
 ## Write a short comment describing this function
 
 makeCacheMatrix <- function(x = matrix(sample(1:100,9),3,3)) {
-  s <- NULL
+  a <- NULL
   set <- function(y) {
     x <<- y
-    s <<- NULL
+    a <<- NULL
   }
   get <- function() x
-  setsolve <- function(solve) s <<- solve
-  getsolve <- function() s
+  setsolve <- function(solve) a <<- solve
+  getsolve <- function() a
   list(set = set, get = get,
        setsolve = setsolve,
        getsolve = getsolve)
@@ -23,14 +23,14 @@ makeCacheMatrix <- function(x = matrix(sample(1:100,9),3,3)) {
 ## Write a short comment describing this function
 
 cacheSolve <- function(x, ...) {
-  s <- x$getsolve()
-  if(!is.null(s)) {
+  a <- x$getsolve()
+  if(!is.null(a)) {
     message("inversed matrix")
-    return(s)
+    return(a)
   }
   data <- x$get()
-  s <- solve(data, ...)
-  x$setsolve(s)
+  a <- solve(data, ...)
+  x$setsolve(a)
   s
 }
 }
