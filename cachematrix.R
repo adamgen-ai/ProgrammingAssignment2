@@ -1,7 +1,10 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
+##input x was set as a matrix 
+##solve function makes an inverse matrix
+##makeCacheMatrix creates object that can
+##cache the inverse of a matrix
 
 makeCacheMatrix <- function(x = matrix(sample(1:100,9),3,3)) {
   a <- NULL
@@ -20,7 +23,9 @@ makeCacheMatrix <- function(x = matrix(sample(1:100,9),3,3)) {
 }
 
 
-## Write a short comment describing this function
+##cacheSolve computes the inverse of the matrix
+
+
 
 cacheSolve <- function(x, ...) {
   a <- x$getsolve()
@@ -31,6 +36,6 @@ cacheSolve <- function(x, ...) {
   data <- x$get()
   a <- solve(data, ...)
   x$setsolve(a)
-  s
+  a
 }
 }
